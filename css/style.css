@@ -1,0 +1,766 @@
+@charset "UTF-8";
+
+/* ==========================================================================
+   1. DESIGN SYSTEM
+========================================================================== */
+
+:root {
+
+  /* Cores */
+
+  --verde-principal: #2E7D32;
+  --verde-claro: #66BB6A;
+  --verde-escuro: #1B5E20;
+  --azul: #1976D2;
+  --amarelo: #FBC02D;
+  --vermelho: #D32F2F;
+  --branco: #FFFFFF;
+  --cinza-claro: #F5F5F5;
+  --cinza-escuro: #424242;
+
+  /* Tipografia */
+
+  --fonte-h1: 32px;
+  --fonte-h2: 28px;
+  --fonte-h3: 24px;
+  --fonte-texto: 16px;
+  --fonte-pequena: 14px;
+
+  /* Espaçamentos */
+
+  --esp-1: 8px;
+  --esp-2: 16px;
+  --esp-3: 24px;
+  --esp-4: 32px;
+  --esp-5: 48px;
+}
+
+
+/* ==========================================================================
+   2. RESET E ESTILOS BASE
+========================================================================== */
+
+* {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+body {
+  background-color: var(--cinza-claro);
+  color: var(--cinza-escuro);
+  font-size: var(--fonte-texto);
+  line-height: 1.5;
+}
+
+h1 {
+  font-size: var(--fonte-h1);
+}
+
+h2 {
+  font-size: var(--fonte-h2);
+  margin-bottom: var(--esp-2);
+}
+
+h3 {
+  font-size: var(--fonte-h3);
+  margin-bottom: var(--esp-1);
+}
+
+p {
+  font-size: var(--fonte-texto);
+}
+
+
+/* ==========================================================================
+   3. CABEÇALHO E MENU RESPONSIVO
+========================================================================== */
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  background-color: var(--verde-escuro);
+
+  padding: var(--esp-2) var(--esp-3);
+
+  color: var(--branco);
+
+  position: relative;
+
+  z-index: 1000;
+}
+
+.logo a {
+  color: var(--branco);
+
+  font-size: var(--fonte-h2);
+
+  font-weight: bold;
+
+  text-decoration: none;
+}
+
+
+/* Menu */
+
+.nav-list {
+  display: flex;
+
+  gap: 20px;
+
+  justify-content: center;
+
+  list-style: none;
+
+  align-items: center;
+}
+
+.nav-item {
+  position: relative;
+}
+
+.nav-item a {
+  color: var(--branco);
+
+  text-decoration: none;
+
+  font-size: var(--fonte-texto);
+
+  padding: var(--esp-1);
+
+  transition: color 0.3s ease;
+}
+
+.nav-item a:hover {
+  color: var(--verde-claro);
+}
+
+
+/* ==========================================================================
+   4. DROPDOWN
+========================================================================== */
+
+.dropdown-menu {
+  display: none;
+
+  position: absolute;
+
+  top: 100%;
+  left: 0;
+
+  background-color: var(--verde-principal);
+
+  min-width: 180px;
+
+  list-style: none;
+
+  border-radius: 4px;
+
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+
+  z-index: 100;
+}
+
+.dropdown:hover .dropdown-menu {
+  display: block;
+}
+
+.dropdown-menu li a {
+  display: block;
+
+  padding: var(--esp-1) var(--esp-2);
+}
+
+
+/* ==========================================================================
+   5. BOTÃO HAMBÚRGUER
+========================================================================== */
+
+.hamburger-btn {
+  display: none;
+
+  background: none;
+
+  border: none;
+
+  color: var(--branco);
+
+  font-size: var(--fonte-h1);
+
+  cursor: pointer;
+}
+
+
+/* ==========================================================================
+   6. ESTRUTURA MACRO - CSS GRID DE 12 COLUNAS
+========================================================================== */
+
+.grid-container {
+  display: grid;
+
+  grid-template-columns: repeat(12, 1fr);
+
+  gap: var(--esp-3);
+
+  max-width: 1200px;
+
+  margin: var(--esp-4) auto;
+
+  padding: 0 var(--esp-2);
+}
+
+.grid-col-12 {
+  grid-column: span 12;
+}
+
+.section-block {
+  background-color: var(--branco);
+
+  padding: var(--esp-3);
+
+  border-radius: 8px;
+
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+}
+
+
+/* ==========================================================================
+   7. INTRODUÇÃO
+========================================================================== */
+
+.page-intro {
+  margin-bottom: var(--esp-3);
+}
+
+
+/* ==========================================================================
+   8. CARTÕES DE PROJETOS
+========================================================================== */
+
+.projects-grid {
+  display: grid;
+
+  grid-template-columns: repeat(3, 1fr);
+
+  gap: var(--esp-2);
+}
+
+
+/* Flexbox interno */
+
+.project-card {
+  display: flex;
+
+  flex-direction: column;
+
+  justify-content: space-between;
+
+  background-color: var(--cinza-claro);
+
+  padding: var(--esp-2);
+
+  border-radius: 6px;
+
+  border: 1px solid #ddd;
+
+  min-height: 240px;
+}
+
+.card-body {
+  flex: 1;
+}
+
+.card-footer {
+  margin-top: var(--esp-2);
+}
+
+
+/* ==========================================================================
+   9. FORMULÁRIOS
+========================================================================== */
+
+.contact-form {
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 10px;
+}
+
+.form-group {
+  display: flex;
+
+  flex-direction: column;
+}
+
+.form-group label {
+  font-size: var(--fonte-pequena);
+
+  margin-bottom: var(--esp-1);
+
+  font-weight: bold;
+}
+
+.form-control {
+  padding: var(--esp-1);
+
+  font-size: var(--fonte-texto);
+
+  border: 2px solid var(--cinza-escuro);
+
+  border-radius: 4px;
+
+  outline: none;
+
+  transition:
+    border-color 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+.form-control:focus {
+  border-color: var(--azul);
+
+  box-shadow:
+    0 0 0 3px rgba(25, 118, 210, 0.15);
+}
+
+
+/* Campo válido */
+
+.form-control.valid {
+  border-color: var(--verde-principal);
+
+  background-color: #f1f8e9;
+}
+
+
+/* Campo inválido */
+
+.form-control.invalid {
+  border-color: var(--vermelho);
+
+  background-color: #ffebee;
+}
+
+
+/* Mensagem de validação */
+
+.field-message {
+  min-height: 20px;
+
+  margin-top: 4px;
+
+  font-size: var(--fonte-pequena);
+}
+
+.field-message.success {
+  color: var(--verde-principal);
+}
+
+.field-message.error {
+  color: var(--vermelho);
+}
+
+
+/* ==========================================================================
+   10. BOTÕES
+========================================================================== */
+
+.form-buttons {
+  display: flex;
+
+  justify-content: center;
+
+  align-items: center;
+
+  gap: var(--esp-2);
+
+  margin-top: var(--esp-2);
+}
+
+.btn {
+  padding: var(--esp-1) var(--esp-2);
+
+  border-radius: 6px;
+
+  border: none;
+
+  font-size: var(--fonte-texto);
+
+  font-weight: bold;
+
+  cursor: pointer;
+
+  transition:
+    background-color 0.3s ease,
+    box-shadow 0.3s ease,
+    transform 0.1s ease;
+
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.btn-primary {
+  background-color: var(--verde-principal);
+
+  color: var(--branco);
+}
+
+.btn-primary:hover {
+  background-color: var(--verde-escuro);
+
+  box-shadow:
+    0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+.btn-primary:focus {
+  outline: 3px solid var(--azul);
+}
+
+.btn-primary:active {
+  transform: scale(0.98);
+}
+
+.btn-primary:disabled {
+  background-color: #ccc;
+
+  color: #666;
+
+  cursor: not-allowed;
+
+  box-shadow: none;
+}
+
+
+/* ==========================================================================
+   11. BADGES
+========================================================================== */
+
+.badges-container {
+  display: flex;
+
+  flex-wrap: wrap;
+
+  gap: var(--esp-1);
+
+  margin-bottom: var(--esp-2);
+}
+
+.badge {
+  display: inline-block;
+
+  padding: 4px 10px;
+
+  border-radius: 12px;
+
+  font-size: var(--fonte-pequena);
+
+  font-weight: bold;
+
+  color: var(--branco);
+}
+
+.badge-success {
+  background-color: var(--verde-principal);
+}
+
+.badge-warning {
+  background-color: var(--amarelo);
+
+  color: var(--cinza-escuro);
+}
+
+.badge-danger {
+  background-color: var(--vermelho);
+}
+
+.badge-info {
+  background-color: var(--azul);
+}
+
+
+/* ==========================================================================
+   12. ALERTAS
+========================================================================== */
+
+.alert {
+  padding: var(--esp-2);
+
+  border-radius: 4px;
+
+  display: flex;
+
+  align-items: center;
+
+  gap: var(--esp-1);
+
+  margin-bottom: var(--esp-2);
+}
+
+.alert-success {
+  background-color: #e8f5e9;
+
+  color: var(--verde-escuro);
+
+  border-left:
+    5px solid var(--verde-principal);
+}
+
+.alert-danger {
+  background-color: #ffebee;
+
+  color: #c62828;
+
+  border-left:
+    5px solid var(--vermelho);
+}
+
+
+/* ==========================================================================
+   13. MODAL
+========================================================================== */
+
+.modal-overlay {
+  display: none;
+
+  position: fixed;
+
+  top: 0;
+  left: 0;
+
+  width: 100%;
+  height: 100%;
+
+  background: rgba(0, 0, 0, 0.5);
+
+  justify-content: center;
+
+  align-items: center;
+
+  z-index: 2000;
+}
+
+.modal-overlay.active {
+  display: flex;
+}
+
+.modal-card {
+  background: var(--branco);
+
+  padding: var(--esp-3);
+
+  border-radius: 8px;
+
+  width: 90%;
+
+  max-width: 450px;
+
+  box-shadow:
+    0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+.modal-header {
+  display: flex;
+
+  justify-content: space-between;
+
+  align-items: center;
+
+  border-bottom: 1px solid #ddd;
+
+  padding-bottom: var(--esp-1);
+}
+
+.modal-close {
+  background: none;
+
+  border: none;
+
+  font-size: var(--fonte-h2);
+
+  cursor: pointer;
+}
+
+.modal-body {
+  margin: var(--esp-2) 0;
+}
+
+.modal-footer {
+  display: flex;
+
+  justify-content: flex-end;
+
+  border-top: 1px solid #ddd;
+
+  padding-top: var(--esp-1);
+}
+
+
+/* ==========================================================================
+   14. ÁREA DOS DADOS DO LOCALSTORAGE
+========================================================================== */
+
+.saved-contacts {
+  margin-top: var(--esp-3);
+
+  padding-top: var(--esp-3);
+
+  border-top: 1px solid #ddd;
+}
+
+.saved-contact {
+  background-color: var(--cinza-claro);
+
+  padding: var(--esp-2);
+
+  border-radius: 6px;
+
+  margin-bottom: var(--esp-1);
+}
+
+
+/* ==========================================================================
+   15. BREAKPOINT 1 - 480px
+========================================================================== */
+
+@media (max-width: 480px) {
+
+  .grid-container {
+    grid-template-columns: 1fr;
+  }
+
+  .projects-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .form-buttons {
+    flex-direction: column;
+
+    width: 100%;
+  }
+
+  .btn {
+    width: 100%;
+  }
+
+}
+
+
+/* ==========================================================================
+   16. BREAKPOINT 2 - 576px
+========================================================================== */
+
+@media (min-width: 481px) and (max-width: 576px) {
+
+  .projects-grid {
+    grid-template-columns: 1fr;
+  }
+
+}
+
+
+/* ==========================================================================
+   17. BREAKPOINT 3 - 768px
+========================================================================== */
+
+@media (max-width: 768px) {
+
+  .hamburger-btn {
+    display: block;
+  }
+
+  .nav-menu {
+    display: none;
+
+    position: absolute;
+
+    top: 100%;
+
+    left: 0;
+
+    width: 100%;
+
+    background-color: var(--verde-escuro);
+
+    padding: var(--esp-2) 0;
+
+    box-shadow:
+      0 4px 8px rgba(0, 0, 0, 0.3);
+
+    z-index: 999;
+  }
+
+  .nav-menu.active {
+    display: block;
+  }
+
+  .nav-list {
+    flex-direction: column;
+
+    gap: var(--esp-2);
+  }
+
+  .dropdown-menu {
+    position: static;
+
+    width: 100%;
+
+    text-align: center;
+
+    box-shadow: none;
+  }
+
+}
+
+
+/* 577px até 768px */
+
+@media (min-width: 577px) and (max-width: 768px) {
+
+  .projects-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+}
+
+
+/* ==========================================================================
+   18. BREAKPOINT 4 - 992px
+========================================================================== */
+
+@media (min-width: 769px) and (max-width: 992px) {
+
+  .projects-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+}
+
+
+/* ==========================================================================
+   19. BREAKPOINT 5 - 1200px
+========================================================================== */
+
+@media (min-width: 1200px) {
+
+  .grid-container {
+    max-width: 1200px;
+  }
+
+}
+
+
+/* ==========================================================================
+   20. ACESSIBILIDADE
+========================================================================== */
+
+@media (prefers-reduced-motion: reduce) {
+
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+
+    transition: none !important;
+  }
+
+}

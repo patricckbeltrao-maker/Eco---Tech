@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Plataforma - Organização do Terceiro Setor</title>
+
+  <!-- Estilos encadeados -->
+  <link rel="stylesheet" href="../css/reset.css">
+  <link rel="stylesheet" href="../css/style.css">
+
+  <!-- Ícones FontAwesome -->
+  <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+
+<body>
+
+  <!-- ================= CABEÇALHO ================= -->
+
+  <header class="header">
+
+    <div class="logo">
+      <a href="#inicio">Plataforma Social</a>
+    </div>
+
+    <!-- Botão Hambúrguer -->
+    <button
+      class="hamburger-btn"
+      id="hamburgerBtn"
+      aria-label="Abrir Menu"
+      aria-expanded="false"
+      type="button">
+
+      <i class="fa-solid fa-bars"></i>
+
+    </button>
+
+    <!-- Navegação -->
+    <nav class="nav-menu" id="navMenu" aria-label="Navegação principal">
+
+      <ul class="nav-list">
+
+        <li class="nav-item">
+          <a href="#inicio">Início</a>
+        </li>
+
+        <li class="nav-item dropdown">
+
+          <a href="#projetos" class="dropdown-toggle">
+            Projetos
+            <i class="fa-solid fa-chevron-down"></i>
+          </a>
+
+          <ul class="dropdown-menu">
+
+            <li>
+              <a href="#projetos">Educação</a>
+            </li>
+
+            <li>
+              <a href="#projetos">Saúde</a>
+            </li>
+
+            <li>
+              <a href="#projetos">Meio Ambiente</a>
+            </li>
+
+          </ul>
+
+        </li>
+
+        <li class="nav-item">
+          <a href="#sobre">Sobre</a>
+        </li>
+
+        <li class="nav-item">
+          <a href="#contato">Contato</a>
+        </li>
+
+        <li class="nav-item">
+          <a href="#doar" class="btn btn-primary">Apoie Já</a>
+        </li>
+
+      </ul>
+
+    </nav>
+
+  </header>
+
+
+  <!-- ================= SPA ================= -->
+
+  <!--
+    O conteúdo das páginas será inserido aqui
+    através do JavaScript.
+  -->
+
+  <main
+    id="app"
+    class="grid-container"
+    tabindex="-1">
+  </main>
+
+
+  <!-- ================= MODAL ================= -->
+
+  <div
+    class="modal-overlay"
+    id="modalOverlay"
+    aria-hidden="true">
+
+    <div
+      class="modal-card"
+      role="dialog"
+      aria-modal="true"
+      aria-labelledby="modalTitle">
+
+      <div class="modal-header">
+
+        <h3 id="modalTitle">
+          Transparência e Impacto
+        </h3>
+
+        <button
+          class="modal-close"
+          id="closeModalBtn"
+          type="button"
+          aria-label="Fechar modal">
+
+          &times;
+
+        </button>
+
+      </div>
+
+      <div class="modal-body">
+
+        <p>
+          Acompanhe prestação de contas dos nossos projetos
+          ativos e editais de voluntariado.
+        </p>
+
+      </div>
+
+      <div class="modal-footer">
+
+        <button
+          class="btn btn-primary"
+          id="closeModalFooterBtn"
+          type="button">
+
+          Fechar
+
+        </button>
+
+      </div>
+
+    </div>
+
+  </div>
+
+
+  <!-- JavaScript principal como módulo -->
+  <script
+    type="module"
+    src="../js/main.js">
+  </script>
+
+</body>
+</html>
