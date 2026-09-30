@@ -144,6 +144,12 @@ function iniciarMenuHamburguer() {
         menuAberto
       );
 
+      hamburgerBtn.setAttribute(
+       "aria-label",
+        menuAberto
+        ? "Fechar Menu"
+        : "Abrir Menu"
+      );
 
       /*
        * Troca o ícone do botão.
