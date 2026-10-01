@@ -278,37 +278,48 @@ function renderizarRota() {
    * projetos
    */
 
-  const linksNavegacao =
-  document.querySelectorAll(
-    "#navMenu a"
-  );
-
-linksNavegacao.forEach(
-  (link) => {
-
-    link.removeAttribute(
-      "aria-current"
-    );
-
-    const href =
-      link.getAttribute("href");
-
-    if (href === `#${rota}`) {
-
-      link.setAttribute(
-        "aria-current",
-        "page"
-      );
-
-    }
-
-  }
-);
-
   const rota =
     window.location.hash
       .replace("#", "")
       .split("/")[0];
+
+
+  /*
+   * Atualiza a página ativa
+   * para acessibilidade.
+   */
+
+  const linksNavegacao =
+    document.querySelectorAll(
+      "#navMenu a"
+    );
+
+
+  linksNavegacao.forEach(
+    (link) => {
+
+      link.removeAttribute(
+        "aria-current"
+      );
+
+
+      const href =
+        link.getAttribute(
+          "href"
+        );
+
+
+      if (href === `#${rota}`) {
+
+        link.setAttribute(
+          "aria-current",
+          "page"
+        );
+
+      }
+
+    }
+  );
 
 
   /*
